@@ -162,10 +162,33 @@ header .container:nth-of-type(1) .social .lang h3 .sup {
 
 header .container:nth-of-type(1) .social .lang:hover .sup {
   display: flex;
-  animation-name: moving-supmenu;
-  animation-duration: 0.3s;
-  animation-fill-mode: both;
-  animation-timing-function: linear;
+  -webkit-animation-name: moving-supmenu;
+          animation-name: moving-supmenu;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes moving-supmenu {
+  0% {
+    position: absolute;
+    margin-top: 175px;
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+
+  100% {
+    position: absolute;
+    margin-top: 100px;
+    opacity: 100%;
+  }
 }
 
 @keyframes moving-supmenu {
@@ -342,6 +365,8 @@ header .container:nth-of-type(2) .items p span {
 }
 
 .landing .container .all-departments {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -367,11 +392,12 @@ header .container:nth-of-type(2) .items p span {
 .landing .container .all-departments .head i:nth-of-type(2) {
   font-size: 10px;
   margin-left: 15px;
+  flex-grow: 1;
+  text-align: end;
 }
 
 .landing .container .all-departments .head h3 {
   margin: 0;
-  /* text-transform: capitalize; */
 }
 
 .landing .container .all-departments ul {
@@ -394,10 +420,11 @@ header .container:nth-of-type(2) .items p span {
 .landing .container .categ {
   display: flex;
   align-items: center;
-      gap: 37px;
+  gap: 37px;
   margin-bottom: 35px;
   flex-wrap: wrap;
 }
+
 .landing .container .categ .all-cat {
   display: flex;
   align-items: center;
@@ -407,10 +434,15 @@ header .container:nth-of-type(2) .items p span {
   padding: 15px 0 15px 20px;
   position: relative;
 }
+
 .landing .container .categ .all-cat::after {
   content: "search";
   position: absolute;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   background-color: var(--mainColor);
   color: #fff;
@@ -423,6 +455,7 @@ header .container:nth-of-type(2) .items p span {
   right: 0;
   cursor: pointer;
 }
+
 .landing .container .categ .all-cat .al {
   display: flex;
   align-items: center;
@@ -447,7 +480,8 @@ header .container:nth-of-type(2) .items p span {
 .landing .container .categ .all-cat i {
   font-size: 10px;
 }
-.landing .container .categ .all-cat form  {
+
+.landing .container .categ .all-cat form {
   position: relative;
 }
 
@@ -457,14 +491,32 @@ header .container:nth-of-type(2) .items p span {
   outline: none;
 }
 
+.landing .container .categ .all-cat form input::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+.landing .container .categ .all-cat form input::-moz-placeholder {
+  color: #ccc;
+}
+
+.landing .container .categ .all-cat form input:-ms-input-placeholder {
+  color: #ccc;
+}
+
+.landing .container .categ .all-cat form input::-ms-input-placeholder {
+  color: #ccc;
+}
+
 .landing .container .categ .all-cat form input::placeholder {
   color: #ccc;
 }
+
 .landing .container .categ .phone {
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
 .landing .container .categ .phone i {
   color: var(--mainColor);
   background-color: #f5f5f5;
@@ -475,22 +527,26 @@ header .container:nth-of-type(2) .items p span {
   -o-border-radius: 50%;
   padding: 15px;
 }
+
 .landing .container .categ .phone .text {
-font-size: 15px;
-display: flex;
-flex-direction: column;
-gap: 15px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
+
 .landing .container .categ .phone .text span {
   color: black;
   font-size: 18px;
   font-weight: 700;
 }
+
 .landing .container .categ .phone .text p {
   margin: 0;
-      color: #777;
-      font-size: 14px;
+  color: #777;
+  font-size: 14px;
 }
+
 .landing .container .sec {
   flex-grow: 1;
   display: flex;
@@ -538,6 +594,8 @@ gap: 15px;
   text-transform: uppercase;
   padding: 15px 20px;
   display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
